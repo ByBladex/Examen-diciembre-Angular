@@ -1,0 +1,70 @@
+//Componente padre (appComponent)
+
+//Vista
+<cabecera (botonPulsado)="comprobarToogle($event)">
+
+<div *ngIf="toogle">
+  <formulario></formulario>
+  <detalles></detalles>
+</div>
+
+//Clase. Ts.
+class ComponentePadre(){
+  
+  //propiedad toogle será un boolean
+  
+  constructor(){...}
+  
+  comprobarToogle(estado:boolean){
+        toogle=estado;
+  }
+}
+
+//Codigo Cabecera
+//Vista
+<button (click)="emitirDatos">
+
+//Ts
+class...
+  private estado:boolean;
+  @Output botonPulsado: eventEmitter<boolean>;
+    
+  emitirDatos(){
+    botonPulsado.emit(estado);
+    estado = !estado;
+  }
+  
+//Codigo Formulario
+//Vista
+
+
+
+//Servicio Libros
+export class ServicioLibros{
+  //Propiedad que me indica el id actual en el formulario
+  private idElegido:Int16Array;
+  //Array Libros
+  constructor(){}
+  
+  //API
+  obtenerLibro(is:int):libro{
+    for...
+    return libroElegido;
+  }
+  
+  setIdElegido(){
+    this.idElegido = id;
+  }
+  
+  getIdElegido(){
+    return this.idElegido;
+  }
+}
+
+
+
+
+PUNTOS DEL EJERCICIO:
+-Saber comunicar padres con hijos (saber usar output).
+-Saber hacer directivas.
+-Servicios.
